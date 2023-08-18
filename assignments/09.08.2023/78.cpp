@@ -5,20 +5,23 @@ using namespace std;
 
 class Solution {
 public:
-    vector<vector<int>> subsets(vector<int>& nums) {
-        int n = nums.size();
-        int pow_set = pow(2, n);
-        vector<vector<int>> power_set;
-        vector<int> temp_set;
-        for(int i = 0; i < pow_set; i++){
-            temp_set.clear();
-            for(int j = 0; j < n ; j++){
-                if ( i & (1 << j)){
-                    temp_set.push_back(nums[j]);
-                }
-            }
-            power_set.push_back(temp_set);
+
+    vector<vector<int>> ans;
+
+    void sub(int i, vector<int>& nums, vector<int> temp){
+        if(i==nums.size()){
+            ans.push_back(temp);
+            return;
         }
-        return power_set;
+
+        sub(i+1,nums,temp);
+        temp.push_back(nums[i]);
+        sub(i+1,nums,temp);
+    }
+
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<int> temp;
+        sub(0,nums,temp);
+        return ans;
     }
 };
