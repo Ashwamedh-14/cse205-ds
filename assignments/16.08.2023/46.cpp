@@ -15,9 +15,9 @@ public:
             return;
         }
         for(int j = i; j < n; j++){
-        swap(nums[i], nums[j]);
-        helper(ans, nums, n, i + 1);
-        swap(nums[i], nums[j]);
+            swap(nums[i], nums[j]);
+            helper(ans, nums, n, i + 1);
+            swap(nums[i], nums[j]);
         }
     }
 
