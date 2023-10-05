@@ -16,13 +16,11 @@ public:
         }
         int val;
         for(int i = 0; i < nums.size(); i++){
-            cout << nums[i] << ' ';
             if (nums[i] != i){
                 val = i;
                 break;
             }
         }
-        cout << '\n';
         return val;
     }
 };

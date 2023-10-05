@@ -4,6 +4,14 @@ using namespace std;
 
 class Solution {
 public:
+    void merge(vector<int>& arr){
+        
+    }
+
+    void mergeSort(vector<int>& arr, int start, int end){
+
+    }
+
     int majorityElement(vector<int>& nums) {
         int n = nums.size();
         for(int i = 0; i < n; i++){
