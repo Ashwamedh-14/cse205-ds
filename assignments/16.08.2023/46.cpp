@@ -11,9 +11,9 @@ public:
             ans.push_back(nums);
             return;
         }
-        if (i > n){
-            return;
-        }
+        // if (i > n){
+        //     return;
+        // }
         for(int j = i; j < n; j++){
             swap(nums[i], nums[j]);
             helper(ans, nums, n, i + 1);
